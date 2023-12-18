@@ -1,0 +1,17 @@
+
+@use '@carbon/type';
+  .heading-03 {
+    @include type.type-style("heading-03");
+  }
+
+  .heading-04 {
+    @include type.type-style("heading-04");
+  }
+
+  .heading-05 {
+    @include type.type-style("heading-05");
+  }
+
+  .heading-06 {
+    @include type.type-style("heading-06");
+  }
