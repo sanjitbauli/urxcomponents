@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem } from "@carbon/react";
+// import { Accordion, AccordionItem } from "@carbon/react";
 
 import { UrxElement } from "./urx-element";
 import filter from "lodash/filter";
@@ -38,7 +38,7 @@ export function PlgInfo(props) {
       </div>
       {!isEmpty(bodyElements) && (
         <div className={`body-content ${accordion? 'has-accordion': ''}`}>
-          {accordion && (
+          {/* {accordion && (
             <Accordion className="info-accordion">
               <AccordionItem open={open} title={`${open ? toggleText.collapse : toggleText.expand }`} onClick={()=>{
                setOpen(!open);
@@ -53,7 +53,7 @@ export function PlgInfo(props) {
                 })}
               </AccordionItem>
             </Accordion>
-          )}
+          )} */}
           {!accordion && (
             <>
               {bodyElements.map((element) => {

@@ -1,10 +1,23 @@
+import React from 'react';
 import { SubscribeFrom } from "./subscribe-from";
+import { UrxElementType } from '../types/UrxElement';
 import { UrxListItems } from "./list-items";
 import { getStyleClasses } from "./style-class.util";
 
-export function UrxElement(props) {
+type Props = {
+  element: UrxElementType;
+  onSelect: Function;
+  selected: boolean;
+  productName: string;
+  lng?: string;
+}
+export function UrxElement(props: Props) {
   const { element, onSelect, selected, productName, lng = "en" } = props;
-  const elementProps = {};
+  const elementProps = {
+    onClick: () =>{
+      
+    }
+  };
   if (typeof onSelect === "function") {
     elementProps.onClick = () => {
       onSelect(element);

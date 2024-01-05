@@ -1,4 +1,13 @@
-export function UrxListItems(props) {
+import React from "react";
+import { UrxElementType } from "../types/UrxElement";
+
+type Props = {
+  element: UrxElementType;
+  onSelect: Function;
+  selected: boolean;
+  editIndex : number;
+}
+export function UrxListItems(props: Props) {
   const { element, onSelect, selected, editIndex } = props;
 
   return (

@@ -1,6 +1,17 @@
-export function SubscribeFrom(props) {
+import React from 'react';
+import { UrxElementType } from '../types/UrxElement';
+type Props = {
+  element: UrxElementType;
+  selected: boolean;
+  onSelect?: Function;
+}
+export function SubscribeFrom(props: Props) {
   const { element, onSelect, selected } = props;
-  const elementProps = {};
+  const elementProps = {
+    onClick: () =>{
+      
+    }
+  };
   if (typeof onSelect === "function") {
     elementProps.onClick = () => {
       onSelect(element);

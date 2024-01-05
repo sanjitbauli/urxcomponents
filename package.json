@@ -1,9 +1,14 @@
 {
-  "name": "urxcomponents",
+  "name": "@urx/react",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
     "@storybook/addon-essentials": "^7.6.5",
     "@storybook/addon-interactions": "^7.6.5",
     "@storybook/addon-links": "^7.6.5",
@@ -14,8 +19,17 @@
     "@storybook/test": "^7.6.5",
     "@types/lodash": "^4",
     "@types/react": "^18.2.45",
+    "@types/rollup-plugin-peer-deps-external": "^2",
+    "node-sass": "^9.0.0",
+    "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup": "^4.9.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.69.5",
     "storybook": "^7.6.5",
     "typescript": "^5.3.3"
@@ -26,7 +40,8 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build": "rollup -c --bundleConfigAsCjs"
   },
   "dependencies": {
     "@carbon/react": "^1.46.0",

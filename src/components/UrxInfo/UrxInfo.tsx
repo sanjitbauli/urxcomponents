@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem } from "@carbon/react";
+// import { Accordion, AccordionItem } from "@carbon/react";
 import {
   getDefaultMobileStyle,
   getInfoStyle,
@@ -7,17 +7,26 @@ import {
 } from "./infoStyles";
 
 import BodyContent from "./BodyContent";
+import { InfoStyleMobileType } from "./types/InfoStyleMobileType";
 import LeftHeading from "./LeftHeading";
+import { MainContentType } from "./types/MainContentType";
 import { PlgInfo } from "./template-elements/plg-info";
 import PropTypes from "prop-types";
 import React from "react";
 
-const Info = ({ mainContent, designTemplate, assetType, productName, t }) => {
+type Props = {
+    mainContent: MainContentType;
+    designTemplate: string;
+    assetType: string;
+    productName: string;
+     t: Function 
+}
+const Info = ({ mainContent, designTemplate, assetType, productName, t }: Props) => {
   const leftBody =
     mainContent && mainContent.leftText ? mainContent.leftText : ``;
   const contentClass = !(mainContent && mainContent.leftHeader) ? "ibm-h1" : "";
   const infoStyle = getInfoStyle(mainContent);
-  const infoStyleMobile = getInfoStyleMobile(mainContent);
+  const infoStyleMobile: InfoStyleMobileType = getInfoStyleMobile(mainContent);
   const v23 = !!(designTemplate && designTemplate === "v23" && mainContent.v23);
   try{
     console.log('window.screen.width', window.parent.window);
@@ -62,9 +71,8 @@ const Info = ({ mainContent, designTemplate, assetType, productName, t }) => {
       <div
         className={`info-block ${
           infoStyleMobile.defaultStyle ? "mobile-default" : ""
-        } ${
-          infoStyleMobile.defaultStyle === "v23" ? "mobile-v23" : ""
-        }  mobile-content`}
+        }
+         mobile-content`}
         style={infoStyleMobile.css}
       >
         {v23 && (
@@ -81,7 +89,7 @@ const Info = ({ mainContent, designTemplate, assetType, productName, t }) => {
         )}
         {!v23 && (
           <>
-            {mainContent.accordion && (
+            {/* {mainContent.accordion && (
               <Accordion isFlush={true} align="start">
                 <AccordionItem
                   title={
@@ -104,7 +112,7 @@ const Info = ({ mainContent, designTemplate, assetType, productName, t }) => {
                   />
                 </AccordionItem>
               </Accordion>
-            )}
+            )} */}
             {!mainContent.accordion && (
               <>
                 {mainContent && mainContent.leftHeader && (

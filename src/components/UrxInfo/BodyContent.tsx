@@ -1,7 +1,12 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-const BodyContent = ({ leftText, contentClass }) => {
+type Props = {
+    leftText: string;
+    contentClass: string;
+}
+
+const BodyContent = ({ leftText, contentClass }: Props) => {
     return (
         <div className={`body-content ${contentClass}`} key="bodyContent" role="tooltip" dangerouslySetInnerHTML={{__html: leftText}} />
     );
