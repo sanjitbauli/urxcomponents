@@ -29,3 +29,4 @@ newrelic_agent.log
 deploy.tar
 udclient/
 /package-lock.json
+/lib

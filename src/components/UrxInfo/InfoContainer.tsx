@@ -45,8 +45,6 @@ export class InfoContainer extends PureComponent<Props>{
               />
             </Column>
           </Row>
-      <button>Some buttons ^</button>
-
       </FlexGrid>
     </div>))
   }
