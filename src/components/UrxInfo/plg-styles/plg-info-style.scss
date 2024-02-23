@@ -18,14 +18,26 @@
 
   color: $blue-60;
 }
-.body-content {
-  margin-top: 2.5rem
+.header-content {
+  margin-bottom: 2.5rem
 }
 .info-block {
   @import "info-types.scss";
   .content-heading{
     margin-bottom: $spacing-05;
   }
+  @media only screen and (min-width: 1056px) {
+    .mobile-content {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1055px) {
+    .desktop-content {
+      display: none;
+    }
+  }
+
   .plg-list-item {
     display: grid;
     &.with-icon{
@@ -121,6 +133,12 @@
       .cds--accordion__content{
         padding-left: 1rem;
         padding-right: 1rem;
+       }
+       .cds--accordion__heading:hover{
+        background-color: inherit;
+       }
+       .cds--accordion__heading:focus{
+        box-shadow:inherit
        }
     }
   }
