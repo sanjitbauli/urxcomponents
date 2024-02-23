@@ -1,6 +1,4 @@
-@use 'node_modules/@carbon/react' with (
-  $use-flexbox-grid: true
-);
+@use 'node_modules/@carbon/react' with ($use-flexbox-grid: true);
 
 @use '@carbon/type';
 @use '@carbon/themes' as *;
@@ -18,42 +16,50 @@
 
   color: $blue-60;
 }
-.header-content {
-  margin-bottom: 2.5rem
+@media only screen and (min-width: 1056px) {
+  .mobile-content {
+    display: none;
+  }
 }
+
+@media only screen and (max-width: 1055px) {
+  .desktop-content {
+    display: none;
+  }
+}
+
 .info-block {
   @import "info-types.scss";
-  .content-heading{
+
+  .content-heading {
     margin-bottom: $spacing-05;
   }
-  @media only screen and (min-width: 1056px) {
-    .mobile-content {
-      display: none;
-    }
-  }
+.body-content{
+  margin-top: 2.5rem;
+}
 
-  @media only screen and (max-width: 1055px) {
-    .desktop-content {
-      display: none;
-    }
-  }
 
-  .plg-list-item {
+   .plg-list-item {
     display: grid;
-    &.with-icon{
-      .picto-container{
+
+    &.with-icon {
+      .picto-container {
         display: none;
       }
+
       @include breakpoint.breakpoint-up('md') {
-        .picto-container{
+        .picto-container {
           display: inline-block;
         }
+
         grid-template-columns: 2rem 1fr;
+
         .list-content {
           margin-left: 2rem;
         }
       }
     }
+
     margin-bottom: $spacing-06;
 
     .picto-container {
@@ -101,46 +107,56 @@
       }
     }
   }
-  .subscribe-from{
-    .label-01{
+
+  .subscribe-from {
+    .label-01 {
       @include type.type-style("label-01");
       padding-bottom: 5px;
     }
-    img{
+
+    img {
       max-height: 50px;
-     
+
     }
+
     padding-bottom: 2.5rem;
   }
-  .has-accordion{
+
+  .has-accordion {
     // padding-bottom: 40px;
     margin-left: -1rem;
     margin-right: -1rem;
     position: relative;
-    .info-accordion{
-      .cds--accordion__heading{
+
+    .info-accordion {
+      .cds--accordion__heading {
         position: absolute;
         bottom: -12px;
-        &:focus{
-          &::before{
+
+        &:focus {
+          &::before {
             border: none;
           }
         }
-        .cds--accordion__title{
+
+        .cds--accordion__title {
           text-align: right
         }
       }
-      .cds--accordion__content{
+
+      .cds--accordion__content {
         padding-left: 1rem;
         padding-right: 1rem;
-       }
-       .cds--accordion__heading:hover{
+      }
+
+      .cds--accordion__heading:hover {
         background-color: inherit;
-       }
-       .cds--accordion__heading:focus{
-        box-shadow:inherit
-       }
+      }
+
+      .cds--accordion__heading:focus {
+        box-shadow: inherit
+      }
     }
   }
-  
+
 }

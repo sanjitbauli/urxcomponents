@@ -27,22 +27,21 @@ export function PlgInfo(props: any) {
   });
   return (
     <>
-
+      <div className="header-content">
+        {headerElements.map((element) => {
+          const props = {
+            element,
+            productName,
+            lng: lang,
+            key: element.id,
+          };
+          return <UrxElement {...props} />;
+        })}
+      </div>
       {!isEmpty(bodyElements) && (
         <div className={`body-content ${accordion ? 'has-accordion' : ''}`}>
           {accordion && (
-            <div className="mobile-content">
-              <div className="header-content">
-                {headerElements.map((element) => {
-                  const props = {
-                    element,
-                    productName,
-                    lng: lang,
-                    key: element.id,
-                  };
-                  return <UrxElement {...props} />;
-                })}
-              </div>
+            <React.Fragment >
               <Accordion className="info-accordion">
                 <AccordionItem open={open} title={`${open ? toggleText.collapse : toggleText.expand}`} onClick={() => {
                   setOpen(!open);
@@ -57,21 +56,10 @@ export function PlgInfo(props: any) {
                   })}
                 </AccordionItem>
               </Accordion>
-            </div>
+            </React.Fragment >
           )}
           {!accordion && (
-            <div className="desktop-content">
-              <div className="header-content">
-                {headerElements.map((element) => {
-                  const props = {
-                    element,
-                    productName,
-                    lng: lang,
-                    key: element.id,
-                  };
-                  return <UrxElement {...props} />;
-                })}
-              </div>
+            <React.Fragment >
               {bodyElements.map((element) => {
                 const props = {
                   element,
@@ -80,7 +68,8 @@ export function PlgInfo(props: any) {
                 };
                 return <UrxElement {...props} />;
               })}
-            </div>
+
+            </React.Fragment >
           )}
         </div>
       )}
