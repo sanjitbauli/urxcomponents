@@ -29,6 +29,13 @@
     display: none;
   }
 
+  .info-block.mobile-content {
+    display: block;
+    word-break: break-word;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+  }
+
   body,
   .sb-show-main.sb-main-padded {
     padding: 0;
