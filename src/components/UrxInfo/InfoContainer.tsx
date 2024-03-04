@@ -1,14 +1,10 @@
-import './plg-styles/plg-info-style.scss';
-
 import { Column, FlexGrid, Row } from "@carbon/react";
 import React, { PureComponent } from "react";
 
 import { MainContentType } from './types/MainContentType';
 import PropTypes from "prop-types";
-
 import UrxInfo from "./UrxInfo";
 import { getProductName } from "./info.utils";
-import { getStyle } from "./infoStyles";
 
 type Props = {
   formConfig: {
@@ -27,10 +23,7 @@ export class InfoContainer extends PureComponent<Props>{
     const { assetType, mainContent } = formConfig;
     const productName = getProductName(formConfig);
 
-    return (<div className={`bg-container`}>
-      <style type='text/css'>
-        {` .bg-container { ${getStyle(mainContent)} }`}
-      </style>
+    return (<div className={`bg-container ${className}`}>
       <FlexGrid className="book-container" condensed={false}>
         <Row>
           <Column sm={4} md={8} lg={16} className="left-column">
@@ -39,6 +32,8 @@ export class InfoContainer extends PureComponent<Props>{
               assetType={assetType}
               productName={productName}
               designTemplate={formConfig.designTemplate}
+              t={()=>{}}
+              container={true}
             />
           </Column>
         </Row>
@@ -47,8 +42,6 @@ export class InfoContainer extends PureComponent<Props>{
   }
 }
 InfoContainer.propTypes = {
-  lng: PropTypes.string.isRequired,
-  cc: PropTypes.string.isRequired,
   formConfig: PropTypes.object.isRequired,
 };
 
