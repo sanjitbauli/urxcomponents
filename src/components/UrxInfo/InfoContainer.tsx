@@ -13,28 +13,31 @@ type Props = {
   };
   className: string;
   formId: string;
+  lang: string;
+  formStatus: string;
 }
 
 interface State {
-  formConfig?: Props['formConfig']; 
+  formConfig?: Props['formConfig'];
 }
 
 export class InfoContainer extends PureComponent<Props, State>{
   constructor(props: Props) {
     super(props);
     this.state = {
-      formConfig: props.formConfig 
+      formConfig: props.formConfig
     };
   }
 
   componentDidMount(): void {
+    const { formId, lang = "en", formStatus = "live" } = this.props;
 
-    fetchUrxForm(this.props.formId, (response: any) => {
+    fetchUrxForm(formId,lang,formStatus, (response: any) => {
       this.setState({
         formConfig: response
       })
     }, (error: any) => {
-     
+
       console.log(error)
     })
   }
