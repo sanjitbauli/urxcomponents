@@ -1,5 +1,7 @@
-@use 'node_modules/@carbon/react' with ($use-flexbox-grid: true);
-
+@use '@carbon/react' with (
+  $use-flexbox-grid: true,
+  $font-path: "@ibm/plex"
+);
 @use '@carbon/type';
 @use '@carbon/themes' as *;
 @use '@carbon/react/scss/spacing' as *;

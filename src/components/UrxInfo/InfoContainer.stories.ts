@@ -3,13 +3,15 @@ import { formConfig } from "./info-data";
 
 export default {
   component: InfoContainer,
-  title: 'UrxInfo',
-  tags: ['autodocs'],
+  title: "UrxInfo",
+  tags: ["autodocs"],
+ 
 };
 
 export const Default = {
   args: {
-    className: 'short-form',
+    className: "short-form",
     formConfig,
+    formId: "urx-t52306",
   },
 };

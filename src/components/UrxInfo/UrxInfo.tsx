@@ -15,7 +15,7 @@ import { InfoStyleMobileType } from "./types/InfoStyleMobileType";
 import LeftHeading from "./LeftHeading";
 import { MainContentType } from "./types/MainContentType";
 import { PlgInfo } from "./template-elements/plg-info";
-import PropTypes from "prop-types";
+
 
 type Props = {
   mainContent: MainContentType;
@@ -45,11 +45,11 @@ export class UrxInfo extends PureComponent<Props> {
       designTemplate === "v23" &&
       mainContent.v23
     );
-    try {
-      console.log("window.screen.width", window.parent.window);
-    } catch (e) {
-      console.log("window.screen.width", e);
-    }
+    // try {
+    //   console.log("window.screen.width", window.parent.window);
+    // } catch (e) {
+    //   console.log("window.screen.width", e);
+    // }
     //
     return (
       <>
@@ -161,7 +161,7 @@ export class UrxInfo extends PureComponent<Props> {
             )}
           </div>
           {/* end mobile content */}
-          <style jsx>
+          <style jsx={true}>
             {`
               @media only screen and (max-width: 1056px) {
                 .info-block-column {
@@ -181,22 +181,5 @@ export class UrxInfo extends PureComponent<Props> {
     );
   }
 }
-UrxInfo.propTypes = {
-  mainContent: PropTypes.shape({
-    leftText: PropTypes.string,
-    leftHeader: PropTypes.string,
-    accordion: PropTypes.bool,
-  }),
-  assetType: PropTypes.string,
-  productName: PropTypes.string,
-  designTemplate: PropTypes.string,
-  container: PropTypes.bool,
-};
-UrxInfo.defaultProps = {
-  t: (t: any) => {
-    return t;
-  },
-  container: false
-};
 
 export default UrxInfo;
